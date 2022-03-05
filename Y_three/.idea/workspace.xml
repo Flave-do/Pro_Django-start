@@ -93,7 +93,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646439465703</updated>
-      <workItem from="1646439478162" duration="2657000" />
+      <workItem from="1646439478162" duration="3325000" />
     </task>
     <task id="LOCAL-00001" summary="上个提交为jinja2，此新建项目，使用mako模板">
       <created>1646442434483</created>
@@ -113,11 +113,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2657000" />
+    <option name="totallyTimeSpent" value="3325000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1364" height="561" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24961832" />
