@@ -15,8 +15,8 @@ Including another URLconf
 """
 
 from django.urls import path
-from .views import Index
+from .views import Message
 
 urlpatterns = [
-    path('',Index.as_view()),
+    path('message/<str:message_type>',Message.as_view()),
 ]
