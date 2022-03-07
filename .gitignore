@@ -6,7 +6,7 @@ $ cat .gitignore
 *.[oa]
 *~
 *.idea
-
+*__pycache__
 
 
 
