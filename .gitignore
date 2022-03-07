@@ -5,8 +5,8 @@
 $ cat .gitignore
 *.[oa]
 *~
-*.ida
-
+*.idea
+/__pycache__/
 
 
 
