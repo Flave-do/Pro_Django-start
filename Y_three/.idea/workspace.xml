@@ -106,7 +106,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="y" value="27" />
     <option name="width" value="1364" />
     <option name="height" value="561" />
@@ -260,7 +260,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1646439465703</updated>
-      <workItem from="1646439478162" duration="8767000" />
+      <workItem from="1646439478162" duration="9063000" />
     </task>
     <task id="LOCAL-00001" summary="上个提交为jinja2，此新建项目，使用mako模板">
       <created>1646442434483</created>
@@ -280,14 +280,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8767000" />
+    <option name="totallyTimeSpent" value="9063000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1364" height="561" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="27" width="1364" height="561" extended-state="1" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24961832" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24961832" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" />
@@ -297,7 +296,7 @@
       <window_info anchor="bottom" id="Event Log" sideWeight="0.50076336" side_tool="true" weight="0.32932693" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32932693" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286052" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286052" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
