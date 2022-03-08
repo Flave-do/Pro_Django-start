@@ -17,3 +17,7 @@ MessageType.info.color = 'green'
 MessageType.warning.color = 'orange'
 MessageType.error.color = 'gray'
 MessageType.danger.color = 'red'
+
+
+# 随便定义几个过滤词组
+SenstiveWord = ['天气','坏人','开心']
