@@ -10,7 +10,7 @@ class Message(View):
             message_type_obj = MessageType[message_type]
         except:
             data['error'] = '没有这个消息类型'
-            render(request,'message.html',data)
+            return render(request,'message.html',data)
 
         message = request.GET.get('message','')
         if not message:
