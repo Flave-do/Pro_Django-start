@@ -18,5 +18,7 @@ class UserInfo(View):
         # user.save()
 
         # 查询方法
-        user = User.objects.get(id=1)
-        return render(request,'UserInfo.html',{'name':user.username})
+        # user = User.objects.get(id=1)
+        Users = User.objects.all()
+        print(Users)
+        return render(request,'UserInfo.html')
