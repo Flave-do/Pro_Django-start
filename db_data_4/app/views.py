@@ -63,6 +63,10 @@ class User_Data(View):
         # print(groups.values('name'))
 
         # 原生sql查询
-        users = User.objects.raw('select * from app_user')
-        print(users)
+        # users = User.objects.raw('select * from app_user')
+        # print(users)
+
+        # 反向查询
+        user = User.objects.filter(diary__id=1)
+        print(user)
         return HttpResponse('successful')
