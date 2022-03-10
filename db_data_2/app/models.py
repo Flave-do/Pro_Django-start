@@ -12,6 +12,11 @@ class User(models.Model):
     crete_time = models.DateTimeField(auto_now_add=True)
     update_time = models.DateTimeField(auto_now=True)
 
+
+    # 联合索引
+    class Meta:
+        index_together = ['username','phone']
+
 # 一对一表关系
 class Userprofile(models.Model):
     id = models.IntegerField(primary_key=True)
