@@ -41,6 +41,11 @@ class User_Data(View):
         # print(list(users))
 
         #过滤查询
-        users = User.objects.filter(username='正行',id=1)
+        # users = User.objects.filter(username='正行',id=1)
+        # print(users)
+
+        # 过滤附加条件查询  年龄大于19岁的
+        users = User.objects.all().exclude(age__gt=19)
         print(users)
+
         return HttpResponse('successful')
