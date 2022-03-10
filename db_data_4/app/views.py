@@ -2,6 +2,9 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import User,Userprofile,Group,Diary
 from django.views.generic import View
+
+# 聚合查询
+from django.db.models import Avg,Count,Sum
 # Create your views here.
 
 class User_Data(View):
@@ -67,6 +70,10 @@ class User_Data(View):
         # print(users)
 
         # 反向查询
-        user = User.objects.filter(diary__id=1)
+        # user = User.objects.filter(diary__id=1)
+        # print(user)
+
+        # 聚合查询
+        user = User.objects.all().aggregate(Avg('age'))
         print(user)
         return HttpResponse('successful')
