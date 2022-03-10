@@ -19,6 +19,9 @@ class UserInfo(View):
 
         # 查询方法
         # user = User.objects.get(id=1)
-        Users = User.objects.all()
-        print(Users)
+        # Users = User.objects.all()
+        # print(Users)
+
+        user = User.objects.get_or_create(username='么可')
+        print(user)
         return render(request,'UserInfo.html')
