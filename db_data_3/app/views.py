@@ -22,6 +22,10 @@ class UserInfo(View):
         # Users = User.objects.all()
         # print(Users)
 
-        user = User.objects.get_or_create(username='么可')
-        print(user)
+        # user = User.objects.get_or_create(username='么可')
+        # print(user)
+
+        # 更新方法
+        user = User.objects.filter(id=1).update(age=25)
+        
         return render(request,'UserInfo.html')
