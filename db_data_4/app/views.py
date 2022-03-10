@@ -32,7 +32,14 @@ class User_Data(View):
         # group.user.add(user)
 
         # 查询
-        zhengxing = User.objects.get(pk=1)
-        data = zhengxing.diary.values('content')
-        print(data)
+        # zhengxing = User.objects.get(pk=1)
+        # data = zhengxing.diary.values('content')
+        # print(data)
+
+        # 集合查询
+        # users = User.objects.all()
+        # print(list(users))
+
+        # 
+
         return HttpResponse('successful')
