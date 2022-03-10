@@ -58,7 +58,11 @@ class User_Data(View):
         # print(user_profile)
 
         # 查询group
-        user = User.objects.all()[0]
-        groups = user.group
-        print(groups.values('name'))
+        # user = User.objects.all()[0]
+        # groups = user.group
+        # print(groups.values('name'))
+
+        # 原生sql查询
+        users = User.objects.raw('select * from app_user')
+        print(users)
         return HttpResponse('successful')
