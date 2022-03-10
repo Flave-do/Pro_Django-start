@@ -12,3 +12,4 @@ class User_Data(View):
         user.phone = '15111122211'
         user.info = '阿坝阿坝'
         user.save()
+        user.objects.create(username='马克',age=20,email='make@qq.com',phone='13012311444',info='嘻嘻嘻吧')
