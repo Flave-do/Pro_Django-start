@@ -40,6 +40,7 @@ class User_Data(View):
         # users = User.objects.all()
         # print(list(users))
 
-        # 
-
+        #过滤查询
+        users = User.objects.filter(username='正行',id=1)
+        print(users)
         return HttpResponse('successful')
