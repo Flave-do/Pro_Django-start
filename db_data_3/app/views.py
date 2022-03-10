@@ -26,6 +26,9 @@ class UserInfo(View):
         # print(user)
 
         # 更新方法
-        user = User.objects.filter(id=1).update(age=25)
-        
+        # user = User.objects.filter(id=1).update(age=25)
+
+        # 删除方法
+        user = User.objects.get(id=4)
+        user.delete()
         return render(request,'UserInfo.html')
