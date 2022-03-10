@@ -49,6 +49,11 @@ class User_Data(View):
         # print(users)
 
         # 模糊查询
-        users = User.objects.filter(username__contains='正')
-        print(users)
+        # users = User.objects.filter(username__contains='正')
+        # print(users)
+
+        # 查询userprofile
+        users = User.objects.all()[0]
+        user_profile = users.userprofile
+        print(user_profile)
         return HttpResponse('successful')
