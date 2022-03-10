@@ -53,7 +53,12 @@ class User_Data(View):
         # print(users)
 
         # 查询userprofile
-        users = User.objects.all()[0]
-        user_profile = users.userprofile
-        print(user_profile)
+        # users = User.objects.all()[0]
+        # user_profile = users.userprofile
+        # print(user_profile)
+
+        # 查询group
+        user = User.objects.all()[0]
+        groups = user.group
+        print(groups.values('name'))
         return HttpResponse('successful')
