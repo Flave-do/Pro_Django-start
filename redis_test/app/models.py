@@ -15,6 +15,6 @@ class User(models.Model):
     # 联合索引
     class Meta:
         index_together = ['username','phone']
-        
+
     def __str__(self):
         return self.username
