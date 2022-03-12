@@ -36,3 +36,17 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
+
+    @classmethod
+    @cache
+    def get(cls,id):
+        rs = cls.objects.get(id=id)
+        return {
+            'id':rs.id,
+            'username':rs.username,
+            'age':rs.age,
+            'info':rs.info,
+            'create_time':str(rs.create_time),
+            'update_time':str(rs.update_time),
+
+        }
