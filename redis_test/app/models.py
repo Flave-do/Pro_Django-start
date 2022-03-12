@@ -1,4 +1,22 @@
+import json
+from functools import wraps
+from django_redis import get_redis_connection
 from django.db import models
+
+# 缓存装饰器
+_cache = get_redis_connection('default')
+def cache(func):
+    @wraps(func)        # 防止多次调用后装饰器后函数名被修改
+    def wrapper(obj,*args):
+        key = args[0]
+        value = _cache.get(key)
+        if value:
+            return json.load(value)
+        rs = func(obj,*args)
+        _cache.set(key,json.dumps(rs))
+        return rs
+    return wrapper
+
 
 # Create your models here.
 
