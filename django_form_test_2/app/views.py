@@ -11,4 +11,8 @@ class Register(View):
 
 
     def post(self,request):
-        pass
+        form = Auth(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username','')
+            password = form.cleaned_data.get('password','')
+            return HttpResponse('username is {},password is {}'.format(username,password))
