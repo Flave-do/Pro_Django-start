@@ -7,5 +7,7 @@ from django.views.generic import View
 class Mongo_User(View):
     def get(self,request):
         user = Users.objects.create(name='shanhe',age=20)
+        paper = Paper(title='test',user=user)
+        paper.save()    # paper为从表需要save
+        print(paper.user.name)
         return HttpResponse('my name is {},age is {}'.format(user.name,user.age))
-    
