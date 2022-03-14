@@ -16,3 +16,5 @@ class Register(View):
             username = form.cleaned_data.get('username','')
             password = form.cleaned_data.get('password','')
             return HttpResponse('username is {},password is {}'.format(username,password))
+        else:
+            return render(request, 'register.html', {'form': form})
