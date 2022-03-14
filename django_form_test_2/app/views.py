@@ -6,8 +6,9 @@ from .forms import Auth
 
 class Register(View):
     def get(self,request):
-        pass
+        form = Auth()
+        return render(request,'register.html',{'form':form})
 
-    
+
     def post(self,request):
         pass
