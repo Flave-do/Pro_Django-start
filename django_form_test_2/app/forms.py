@@ -9,7 +9,7 @@ class Auth(forms.Form):
         min_length=4,
         label='用户名',
     )
-    
+
     password = fields.CharField(
         widget=forms.PasswordInput(),
         label='密码',
