@@ -29,3 +29,10 @@ class Auth(forms.Form):
 
         if not password:
             raise forms.ValidationError('密码不可为空')
+
+    # 单独验证
+    def clean_username(self):
+        username = self.cleaned_data.get('username','')
+        if len(username) > 6:
+            raise forms.ValidationError('用户名不可超过6个字符')
+        return username
