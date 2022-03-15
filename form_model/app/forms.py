@@ -15,7 +15,7 @@ class AuthModelForm(forms.ModelForm):
             fields = '__all__'
         
         '''
-        # 定义不想渲染的字段
+        # 定义不想渲染的字段比如id
         # exclude = ['id']
 
         # 定义字段类型 一般情况下直接使用默认的转换类型 很少用
@@ -35,6 +35,7 @@ class AuthModelForm(forms.ModelForm):
             'username':forms.TextInput(
                 attrs={'placeholder':'请输入用户名'}
             ),
+
             'password':forms.PasswordInput(
                 attrs={'placeholder':'请输入密码'}
 
@@ -45,7 +46,6 @@ class AuthModelForm(forms.ModelForm):
         error_messages = {
             'username':{'required':'用户名不可为空'},
             'password':{'min_length':'密码长度不可小于十个字符'}
-
         }
 
     # 单项过滤
