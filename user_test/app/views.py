@@ -35,7 +35,7 @@ class Register(View):
 # 登录
 class Login(View):
     def get(self, request):
-        pass
+        return render(request,'login.html')
 
     def post(self, request):
         pass
