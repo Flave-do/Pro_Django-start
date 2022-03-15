@@ -19,6 +19,17 @@ class Register(View):
 
     def post(self,request):
         username = request.POST.get('username','')
+        password = request.POST.get('password','')
+        check_password = request.POST.get('check_password','')
+        if password != check_password:
+            return HttpResponse('密码输入不一致')
+
+        # 判断当前注册帐号是否已注册，如果已经被注册则提示已注册
+        exists = User.objects.filter(username=username).exists()
+        if exists:
+            return HttpResponse('该帐号已被注册')
+        User.objects.create_user(username=username,password=password)
+        return redirect(reverse('login'))
 
 
 # 登录
