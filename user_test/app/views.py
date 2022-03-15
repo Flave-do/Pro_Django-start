@@ -56,7 +56,7 @@ class Login(View):
 # 网站首页
 class Index(View):
     def get(self, request):
-        pass
+        return render(request,'index.html')
 
     def post(self, request):
         pass
