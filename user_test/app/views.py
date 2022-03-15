@@ -65,7 +65,8 @@ class Index(View):
 # 注销
 class LogoutUser(View):
     def get(self, request):
-        pass
+        logout(request)
+        return redirect(reverse('register'))
 
     def post(self, request):
         pass
