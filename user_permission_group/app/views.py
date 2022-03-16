@@ -77,7 +77,7 @@ class A(View):
             # 添加权限
             request.user.user_permissions.add(a_permission)
             if not request.user.has_perm('app.look_a_page'):
-                return render(request,'a.html',{'error':'当前用户没有权限访问该页面'})
+                return HttpResponse('当前用户没有权限访问该页面')
             else:
                 return render(request,'a.html')
 
