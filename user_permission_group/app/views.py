@@ -64,3 +64,30 @@ class LogoutUser(View):
     def get(self, request):
         logout(request)
         return redirect(reverse('register'))
+
+
+# 基于类的验证  针对单个用户
+class A(View):
+    def get(self,request):
+        # 判断用户当前是否登录
+        if not request.user.is_authenticated:
+            return render(request,'place_login.html')
+        else:
+            a_permission = Permission.objects.get(codename='look_a_page')
+            # 添加权限
+            request.user.user.has_permissions.add(a_permission)
+            if not request.user.has_perm('app.look_a_page'):
+                return render(request,'a.html',{'error':'当前用户没有权限访问该页面'})
+            else:
+                return render(request,'a.html')
+
+    def post(self,request):
+        pass
+
+
+class B(View):
+    def get(self, request):
+        pass
+
+    def post(self, request):
+        pass
