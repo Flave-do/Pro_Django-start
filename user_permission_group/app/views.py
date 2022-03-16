@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.views.generic import View
 from django.contrib.auth import login,logout,authenticate
 from django.contrib.auth.models import User,Permission,Group
+
+# 查找权限
+from django.db.models import Q
 # Create your views here.
 
 
@@ -87,7 +90,42 @@ class A(View):
 
 class B(View):
     def get(self, request):
-        pass
+        # 判断用户当前是否登录  如果登录就添加相应权限
+        if not request.user.is_authenticated:
+            return render(request, 'place_login.html')
+        else:
+            # 获取指定用户---给他添加权限
+            user = User.objects.get(username='test')
+
+            # 创建和获取组
+            # 表----用objects
+            # get_or_create方法有则获取，无则创建  create单独使用重复创建会报错
+            Group.objects.get_or_create(name='b_page_test')
+            # get里面会有内置添加组add的方法，get_or_create没有，所以重复调用get方法
+            group = Group.objects.get(name='b_page_test')
+
+            # 获取content_type_id  为8的权限
+            permissions = Permission.objects.filter(content_type_id=8)
+
+            # 将id为8的权限添加到组
+            for per in permissions:
+                group.permissions.add(per)
+
+            # 将用户添加到组
+            user.groups.add(group)
+
+            # 验证当前用户有没有自定义权限
+            b_permisson = Permission.objects.filter(codename='look_b_page').first()
+            # distinct()    权限去重
+            users = User.objects.filter(Q(groups__permissions=b_permisson)|Q(user_permissions=b_permisson)).distinct()
+
+            # 判断当前用户是否具有指定权限
+            if request.user not in users:
+                return HttpResponse('当前用户没有权限访问该页面')
+            else:
+                return render(request,'b.html')
+
+
 
     def post(self, request):
         pass
